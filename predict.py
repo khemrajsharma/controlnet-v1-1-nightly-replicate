@@ -9,6 +9,7 @@ from diffusers import StableDiffusionControlNetPipeline, ControlNetModel
 from controlnet_aux import CannyDetector, DepthDetector, NormalDetector
 import sys
 import subprocess
+import cog
 
 class Predictor:
     def setup(self):
@@ -90,7 +91,7 @@ class Predictor:
     
     def predict(
         self,
-        image,
+        image: cog.File,
         prompt: str,
         control_type: str = "canny",
         negative_prompt: str = "",
@@ -122,6 +123,9 @@ class Predictor:
         # Load image
         if isinstance(image, str):
             image = Image.open(image).convert("RGB")
+        else:
+            # Handle cog.File type
+            image = Image.open(image.path).convert("RGB")
         
         # Convert to numpy for processing
         image_np = np.array(image)
@@ -161,4 +165,4 @@ class Predictor:
         output_path = tempfile.mktemp(suffix=".png")
         result.save(output_path)
         
-        return output_path
+        return cog.File(output_path)
