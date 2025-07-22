@@ -100,7 +100,7 @@ class Predictor:
         low_threshold: int = 100,
         high_threshold: int = 200,
         seed: Optional[int] = None
-    ):
+    ) -> cog.File:
         """
         Generate image using ControlNet
         
