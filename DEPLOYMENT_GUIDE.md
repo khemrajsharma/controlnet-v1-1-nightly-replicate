@@ -60,7 +60,7 @@ cog push
    https://replicate.com/YOUR_USERNAME/controlnet-v1-1-nightly
    ```
 
-2. **Update your InteriorStudio app**: Change your `.env` file:
+2. **Update your RoomCraft AI app**: Change your `.env` file:
    ```bash
    REPLICATE_MODEL=YOUR_USERNAME/controlnet-v1-1-nightly
    ```
