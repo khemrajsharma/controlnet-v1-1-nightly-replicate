@@ -1,0 +1,15 @@
+torch==2.0.1
+torchvision==0.15.2
+diffusers==0.21.4
+transformers==4.30.2
+accelerate==0.20.3
+opencv-python==4.8.0.76
+controlnet-aux==0.0.6
+safetensors==0.3.2
+xformers==0.0.20
+Pillow==10.0.0
+numpy==1.24.3
+scipy==1.11.1
+omegaconf==2.3.0
+einops==0.6.1
+gradio==3.35.2
