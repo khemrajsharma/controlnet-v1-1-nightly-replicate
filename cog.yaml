@@ -13,4 +13,6 @@ build:
     - "git"
   python_requirements: "requirements.txt"
 
+image: "r8.im/khemrajsharma/controlnet-v1-1-nightly"
+
 predict: "predict.py:Predictor"
